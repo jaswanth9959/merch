@@ -31,7 +31,7 @@ const Header = () => {
       <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>MerchShop</Navbar.Brand>
+            <Navbar.Brand>BetterBuy</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -53,9 +53,10 @@ const Header = () => {
                     <LinkContainer to="/profile">
                       <NavDropdown.Item>Profile</NavDropdown.Item>
                     </LinkContainer>
-                    <LinkContainer to="/myorders">
+                    {!userInfo.isAdmin &&   <LinkContainer to="/myorders">
                       <NavDropdown.Item>My Orders</NavDropdown.Item>
-                    </LinkContainer>
+                    </LinkContainer>}
+                  
                     <NavDropdown.Item onClick={logoutHandler}>
                       Logout
                     </NavDropdown.Item>
